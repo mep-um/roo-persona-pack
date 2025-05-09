@@ -1,4 +1,4 @@
-## Rules Product Manager
+## Rules rpp-product-manager
 [Lean‑SM]: https://hbr.org/2013/05/why-the-lean-start-up-changes-everything
 [INVEST]: https://www.agilealliance.org/glossary/invest/
 [Job‑Story]: https://medium.com/the-job-to-be-done/af7cdee10c27
@@ -7,7 +7,7 @@
 [Scope‑Creep]: https://www.pmi.org/learning/library/top-five-causes-scope-creep-6675
 [DoD‑Guide]: https://www.scrum.org/resources/what-difference-between-definition-done-and-acceptance-criteria
 
-## Rules UX Designer
+## Rules rpp-ux-designer
 [WCAG22]: https://www.w3.org/WAI/WCAG22/
 [Nielsen10]: https://www.nngroup.com/articles/ten-usability-heuristics/
 [HicksLaw]: https://www.interaction-design.org/literature/topics/hick-s-law
@@ -19,7 +19,7 @@
 [CogLoad]: https://bootcamp.uxdesign.cc/what-is-cognitive-load-in-ux-ff068fb8c44d
 [Inclusive]: https://inclusive.microsoft.design/
 
-## Rules Content Writer
+## Rules rpp-content-writer
 [Flesch]: https://readable.com/readability/flesch-reading-ease-flesch-kincaid-grade-level/
 [PlainLang]: https://www.plainlanguage.gov/guidelines/
 [Microcopy]: https://uxdesign.cc/a-mini-guide-to-microcopy-55496469f03b
@@ -32,7 +32,7 @@
 [GradeCDC]: https://www.cdc.gov/ccindex/tool/index-different.html
 [AltText]: https://webaim.org/techniques/alttext/
 
-## Rules Devops SRE
+## Rules rpp-devops-sre
 [ToilDef]: https://sre.google/sre-book/service-level-objectives/#eliminating-toil
 [ErrBudget]: https://www.wired.com/story/what-is-an-error-budget/
 [DORA]: https://dora.dev
@@ -49,7 +49,7 @@
 [PromRules]: https://prometheus.io/docs/practices/alerting/
 [GitOps]: https://opengitops.dev
 
-## Rules QA Analyst
+## Rules rpp-qa-analyst
 [TestPyramid]: https://martinfowler.com/articles/practical-test-pyramid.html
 [ISO25010]: https://www.iso.org/standard/35733.html
 [NISTPerf]: https://csrc.nist.gov/pubs/sp/800/55/r2/iwd
@@ -61,7 +61,7 @@
 [Axe]: https://dequeuniversity.com/rules/axe/
 [SonarCoverage]: https://community.sonarsource.com/t/sonarcloud-how-to-change-code-coverage-ratio-from-default-of-80/70988
 
-## Rules Security Engineer
+## Rules rpp-sec-eng
 [OWASPTop10]: https://owasp.org/Top10/
 [NISTCSF]: https://www.nist.gov/cyberframework
 [ATTACK]: https://attack.mitre.org/
@@ -78,7 +78,7 @@
 [PCIDSS4]: https://blog.pcisecuritystandards.org/updated-pci-dss-v4.0-timeline
 [NIST80063]: https://pages.nist.gov/800-63-3/sp800-63b.html
 
-## Rules Accessibility Specialist
+## Rules rpp-accessibility
 [WCAG22]: https://www.w3.org/WAI/WCAG22/Understanding/
 [ADAWeb]: https://www.ada.gov/resources/web-guidance/
 [Sect508]: https://www.section508.gov/manage/program-roadmap/
@@ -92,7 +92,7 @@
 [Inclusive]: https://inclusive.microsoft.design/
 [UKGov]: https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction
 
-## Rules Legal Counsel
+## Rules rpp-legal-counsel
 [TOS-Tpl]: https://www.termsfeed.com/blog/sample-saas-terms-conditions-template/
 [DPA-Tpl]: https://gdpr.eu/data-processing-agreement/
 [USPTO]: https://www.uspto.gov/trademarks/basics
@@ -105,7 +105,7 @@
 [COPPA]: https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions
 [IPBasics]: https://www.investopedia.com/articles/investing/111014/patents-trademarks-and-copyrights-basics.asp
 
-## Rules Data Privacy Officer
+## Rules rpp-dpo-privacy
 [GDPR]: https://eur-lex.europa.eu/eli/reg/2016/679/oj
 [RoPA]: https://gdpr-info.eu/art-30-gdpr/
 [UK‑GDPR]: https://ico.org.uk/for-organisations/dpo/
@@ -117,7 +117,7 @@
 [SchremsII]: https://edpb.europa.eu/schrems-ii-supplementary-measures_en
 [AgeCode]: https://ico.org.uk/for-organisations/childrens-code/
 
-## Rules Regulatory Compliance Officer
+## Rules rpp-reg-compliance
 [PECR]: https://ico.org.uk/for-organisations/direct-marketing-and-pecr/
 [ePrivacy]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32002L0058
 [CAN‑SPAM]: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
@@ -131,7 +131,7 @@
 [AgeCode]: https://ico.org.uk/for-organisations/childrens-code/
 [TruthAds]: https://www.ftc.gov/business-guidance/resources/truth-advertising
 
-## Rules Security Compliance Specialist
+## Rules rpp-sec-compliance
 [SOC2]: https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022
 [ISO27001]: https://www.iso.org/standard/27001
 [NIST80053]: https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final
@@ -144,7 +144,7 @@
 [CIS‑Controls]: https://www.cisecurity.org/controls/v8
 [SOC2‑TypeII]: https://www.auditboard.com/blog/soc-2-framework-guide-the-complete-introduction/
 
-## Rules Risk & Governance Manager
+## Rules rpp-risk-governance
 [ISO31000]: https://www.iso.org/standard/65694.html
 [COSO-ERM]: https://www.coso.org/guidance-erm
 [NIST80030]: https://csrc.nist.gov/pubs/sp/800/30/r1/final
@@ -156,7 +156,7 @@
 [KRI]: https://www.risk.net/definition/key-risk-indicators-kris
 [BIA]: https://www.ready.gov/sites/default/files/2020-07/business-impact-analysis-worksheet.pdf
 
-## Rules Trust & Safety Officer
+## Rules rpp-trust-safety
 [TSPA]: https://www.tspa.info/
 [DSA-Q&A]: https://ec.europa.eu/commission/presscorner/detail/en/QANDA_20_2348
 [YTStrike]: https://support.google.com/youtube/answer/2802032
@@ -170,7 +170,7 @@
 [DSA-Transp]: https://digital-strategy.ec.europa.eu/en/news/digital-services-act-commission-launches-transparency-database
 [YTHarass]: https://support.google.com/youtube/answer/2802268
 
-## Rules Documentation Engineer
+## Rules rpp-documentation-engineer
 [ISO26514]: https://www.iso.org/standard/77451.html
 [DITA13]:   https://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part3-all-inclusive.html
 [OWASPASVS2021]: https://owasp.org/www-project-application-security-verification-standard/

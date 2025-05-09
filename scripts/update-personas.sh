@@ -1,22 +1,56 @@
 #!/usr/bin/env bash
-# update-personas.sh – post-install/update hook for roo-persona-pack
-# Usage: bash ./scripts/update-personas.sh [--add-diff-attr]
+# update-personas.sh  –  Sync roo-persona-pack into the current project.
+#  Features
+#   • Downloads the latest tarball (branch main)   • Skips LICENSE and README*
+#   • Merges .roomodes so that UPSTREAM WINS       • Removes stale pack files only
+#   • Tracks its own footprint in .roo-persona-pack.manifest
+#   • Adds diff-ignore lines to .gitattributes once:
+#    /.roo/rules-rpp-*            -diff
+#    /.roo-persona-pack.manifest  -diff
 
-set -euo pipefail   # fail fast, catch undefined vars :contentReference[oaicite:3]{index=3}
 
-ADD_DIFF=0
-for arg in "$@"; do
-  case "$arg" in
-    --add-diff-attr) ADD_DIFF=1 ;;
-    *) echo "Unknown option: $arg" >&2; exit 1 ;;
-  esac
-done
+set -euo pipefail
 
-if (( ADD_DIFF )); then
-  ATTR='/.roo-personas/* -diff'               # ignore diffs for persona files
-  touch .gitattributes                        # create if missing
-  # add the rule only once (idempotent) :contentReference[oaicite:4]{index=4}
-  grep -qxF "$ATTR" .gitattributes || echo "$ATTR" >> .gitattributes
+PACK_URL=${PACK_URL:-"https://github.com/mep-um/roo-persona-pack/archive/refs/heads/main.tar.gz"}
+TMP_DIR=$(mktemp -d ".tmp_roo_pack.XXXX")   # unique temp dir  (mktemp -d)
+MANIFEST=".roo-persona-pack.manifest"
+ATTR_RULES='/.roo/rules-rpp-* -diff'
+ATTR_MANIFEST='/.roo-persona-pack.manifest -diff'
+
+# Download & untar into $TMP_DIR
+curl -Ls "$PACK_URL" | tar -xz --strip-components=1 \
+                               --exclude='*/LICENSE' \
+                               --exclude='*/README*' \
+                               -C "$TMP_DIR"      # strip top dir (tar)
+
+# Merge .roomodes (upstream wins)
+if [[ -f .roomodes ]]; then                     # test for file
+  jq -s '.[1] + .[0] | unique_by(.slug)' \
+        "$TMP_DIR/.roomodes" .roomodes \
+      > "$TMP_DIR/.roomodes.merged"            # unique_by keeps first dup (docs)
+  mv "$TMP_DIR/.roomodes.merged" .roomodes     # same-FS mv is atomic
+else
+  mv "$TMP_DIR/.roomodes" .roomodes
 fi
 
-echo "✅ roo-persona-pack synced successfully."
+# Prune pack files that vanished upstream
+NEW_MANIFEST="$TMP_DIR/$MANIFEST"
+if [[ -f $MANIFEST ]]; then
+  # delete paths present in OLD manifest but absent in NEW
+  grep -Fxvf "$NEW_MANIFEST" "$MANIFEST" | xargs -r rm -rf   # grep diff trick
+fi
+
+# rsync : copy + delete only pack files
+rsync -a --delete \
+      --include-from="$NEW_MANIFEST" \
+      --exclude='*' \
+      "$TMP_DIR"/ ./                                 # include/exclude pattern
+
+# Save fresh manifest & add diff rule
+mv "$NEW_MANIFEST" "$MANIFEST"
+touch .gitattributes
+grep -qxF "$ATTR_RULES"    .gitattributes || echo "$ATTR_RULES"    >> .gitattributes
+grep -qxF "$ATTR_MANIFEST" .gitattributes || echo "$ATTR_MANIFEST" >> .gitattributes
+
+rm -rf "$TMP_DIR"
+echo "✅ roo-persona-pack synced (upstream wins, custom files preserved)."

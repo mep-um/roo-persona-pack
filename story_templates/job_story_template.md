@@ -2,7 +2,7 @@
 id: JOB-<YYYYMMDD>-<##>
 title: "<outcome>"
 status: draft
-owner: product-manager
+owner: rpp-product-manager
 created: <YYYY-MM-DD>
 metrics: { northStar: <metric>, target: <goal> }
 tags: []
