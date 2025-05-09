@@ -1,4 +1,3 @@
-````markdown
 ## Roo Persona Pack
 
 A collection of ready-to-use **custom RooCode modes** plus the helper rules that power them.  
